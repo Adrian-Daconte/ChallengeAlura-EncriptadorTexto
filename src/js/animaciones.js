@@ -1,7 +1,12 @@
-//animacion cursor Text 
-document.addEventListener('DOMContentLoaded', function() {
-    const textarea = document.querySelector('.areaText textarea');
-    
-        textarea.focus();
-   
-});
+//animacion cursor caret Text 
+document.addEventListener('DOMContentLoaded',(e)=>{
+
+ 
+
+    // Obtener el elemento <textarea>
+const textarea = document.querySelector('textarea')?.focus();
+
+
+
+
+})
