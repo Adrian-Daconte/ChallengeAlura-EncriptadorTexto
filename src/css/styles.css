@@ -149,4 +149,18 @@ img {
   flex: 1;
 }
 
+.div-popup {
+  background-color: aliceblue;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80vw;
+  height: 55vh;
+  transform: translate(-50%, -50%);
+}
+
+.non {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */
