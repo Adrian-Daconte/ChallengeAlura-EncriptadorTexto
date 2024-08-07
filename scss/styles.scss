@@ -43,10 +43,14 @@ img {
     height: auto;
     object-fit: cover;
 }
-
-//contenedor principal
-
+.center {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    padding: 5%;
+  
 .contenedor__principal {
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -71,8 +75,8 @@ img {
         padding-bottom: 2rem;
         box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
         order: 1;
-       
-      @include mixins.movil {
+
+        @include mixins.movil {
             order: 2;
         }
 
@@ -105,59 +109,93 @@ img {
                 caret-color: variables.$secondary-color;
                 border-radius: 12px;
                 background-color: variables.$quaternary-color;
-                ;
             }
         }
     }
     .cont__botones {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        border: 1rem solid variables.$tertiary-color;
+        
+       
         order: 2;
         @include mixins.movil {
             order: 1;
         }
-      
+
+        .botones{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 1rem;
+
+            button {
+                padding: 1rem;
+                border: none;
+                border-radius: 12px;
+                background-color: variables.$tertiary-color;
+                color: variables.$primary-color;
+                font-family: variables.$fuente-titulo;
+                font-size: 1.2rem;
+                cursor: pointer;
+                transition: all 0.3s;
+                &:hover {
+                    background-color: variables.$secondary-color;
+                    color: variables.$tertiary-color;
+                }
+            }
+        }
     }
     .cont__output {
         display: flex;
         flex-direction: column;
-      order: 3;
+        order: 3;
 
         background-color: variables.$quaternary-color;
         border-radius: 20px;
         box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
-        background-color: black;
+       
         padding: 15px;
         gap: 5px;
         @include mixins.movil {
             order: 3;
         }
         .imagen__otput {
-            background-color: aqua;
+           background-color: variables.$primary-color;
             flex: 3;
-            
         }
         .palabra__output {
-            background-color: beige;
+           
             flex: 1;
-            
         }
     }
 }
 
-.div-popup{
-    background-color: aliceblue;
+.div-popup {
+    padding: 5%;
+    background-color: variables.$secondary-color;
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 80vw;
-    height: 55vh;
-    transform: translate(-50% ,-50%);
+    width: 60vw;
+    width: max-content + 20px;
+    transform: translate(-50%, -50%);
 
+    @include mixins.movil {
+        width: 80vw;
+    }
 }
 
 .non {
     display: none;
+}
+.fondo-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.718);
+    z-index: 100;
+}
 }
